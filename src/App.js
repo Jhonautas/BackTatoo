@@ -19,8 +19,8 @@ class App {
     }
 
     routes() {
-        this.app.use("/", homeRoutes);
-        this.app.use("/usuario", usuarioRoutes);
+        this.app.use('/', homeRoutes);
+        this.app.use('/usuario', usuarioRoutes);
     }
 }
 
