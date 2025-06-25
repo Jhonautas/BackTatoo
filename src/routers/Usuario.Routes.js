@@ -6,7 +6,7 @@ const routerUsuario = new Router()
 routerUsuario.get('/', usuarioController.index)
 routerUsuario.post('/', usuarioController.store)
 routerUsuario.get('/:email', usuarioController.show)
-routerUsuario.pu('/:email', usuarioController.update)
+routerUsuario.put('/:email', usuarioController.update)
 routerUsuario.delete('/:id', usuarioController.delete)
 
 export default routerUsuario
