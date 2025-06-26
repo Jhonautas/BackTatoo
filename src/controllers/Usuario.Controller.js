@@ -8,6 +8,7 @@ class UsuarioController {
             console.log(usuario)
             return res.status(201).json(usuario)
         } catch (error) {
+            console.error('Erro em store:', error) // 👈 adicionado
             return res.status(500).json({ error: 'Erro ao criar usuário' })
         }
     }
@@ -17,6 +18,7 @@ class UsuarioController {
             const usuarios = await Usuario.findAll()
             return res.status(200).json(usuarios)
         } catch (error) {
+            console.error('Erro em index:', error) // 👈 adicionado
             return res.status(500).json({ error: 'Erro ao listar usuários' })
         }
     }
@@ -30,6 +32,7 @@ class UsuarioController {
             }
             return res.status(200).json(usuario)
         } catch (error) {
+            console.error('Erro em show:', error) // 👈 adicionado
             return res.status(500).json({ error: 'Erro ao buscar usuário' })
         }
     }
@@ -46,7 +49,8 @@ class UsuarioController {
             usuario.senha = senha || usuario.senha
             await usuario.save()
             return res.status(200).json(usuario)
-        } catch (error) { // Adicione esta linha
+        } catch (error) {
+            console.error('Erro em update:', error) // 👈 adicionado
             return res.status(500).json({ error: 'Erro ao atualizar usuário' })
         }
     }
@@ -59,9 +63,9 @@ class UsuarioController {
                 return res.status(404).json({ error: 'Usuário não encontrado' })
             }
             await usuario.destroy()
-            return res.status(204).send()
+            return res.status(200).json({ message: 'Usuário deletado com sucesso!' })
         } catch (error) {
-            console.log(error) // Adicione esta linha
+            console.error('Erro em delete:', error) // 👈 adicionado
             return res.status(500).json({ error: 'Erro ao deletar usuário' })
         }
     }

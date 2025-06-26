@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import databaseConfig from '../config/Database.js'
+import databaseConfig from '../config/database.js'
 import Usuario from '../models/Usuario.js'
 
 const models = [Usuario]

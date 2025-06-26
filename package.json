@@ -11,10 +11,11 @@
         "Tatto",
         "Desenvolvimento WEB",
         "Node.js",
-        "Express"
+        "Express",
+         "Dev BackEnd"
     ],
     "author": "Cássio Jhonatan Anselmo Cruz",
-    "license": "ISC",
+    "license": "MIT",
     "description": "Sistema de exemplo Para curso de técnico de Informática do IFSP, aplicando API.",
     "devDependencies": {
         "@eslint/js": "^9.27.0",
